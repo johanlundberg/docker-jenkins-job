@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -eE
+
+build="build_${BUILD_NUMBER}"
+
+trap "rm -rf $build" ERR
+
+mkdir $build && cd $build && env CMAKE_COLOR_MAKEFILE=OFF cmake ..  && make 
