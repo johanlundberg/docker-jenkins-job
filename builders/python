@@ -18,7 +18,7 @@ env
 git status
 ls -l
 
-test "x$package" = "x" && package="$1"
+test "x$package" = "x" && package="`echo $1 | sed 's/-/_/g'`"
 test "x$srcdir" = "x" && srcdir="`echo $2 | sed 's/-/_/g'`"
 test "x$testworkdir" = "x" && testworkdir="$3"
 test "x$testworkdir" = "x" && testworkdir="$WORKSPACE"
