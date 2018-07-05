@@ -33,8 +33,7 @@ if [ "x$srcdir" = "x" ]; then
   exit 1
 fi
 
-cd $WORKSPACE                                                                                                                                    
-                                                                                                                                              
+cd $WORKSPACE
 export VIRTUAL_ENV="$WORKSPACE/venv_${BUILD_NUMBER}"
 virtualenv --no-site-packages $VIRTUAL_ENV
 export PIP_DOWNLOAD_CACHE=/var/cache/jenkins/pip
@@ -56,7 +55,7 @@ test -f tests/test_requirements.txt && pip install --pre -r tests/test_requireme
 # By white listing pypi.sunet.se and pypi.python.org we forbidd easy_install
 # to fetch package from very slow servers like the one from python-dateutil
 # Easy_install tries to do that in order to look if there are newer versions
-python ./setup.py develop --index-url https://pypi.sunet.se/simple --allow-hosts *.sunet.se,*.python.org,*.github.com,*.launchpad.net,*.cherrypy.org,*.sf.net,*.sourceforge.net
+python ./setup.py develop --index-url https://pypi.sunet.se/simple --allow-hosts *.sunet.se,*.python.org,*.github.com,*.launchpad.net,*.cherrypy.org,*.sf.net,*.sourceforge.net,*.pythonhosted.org
 # compile language files if project has a 'locale' directory
 test -d */locale && python setup.py compile_catalog
 test -d */locale && find */locale -type f -ls
