@@ -3,6 +3,8 @@
 set -x
 set -eE
 
+# Allow tests to connect to containers as they where on localhost
+echo $(docker inspect -f '{{.NetworkSettings.Gateway}}' $(hostname)) localhost >> /etc/hosts
 
 TMP=`pwd`/"tmp_${BUILD_NUMBER}"
 mkdir -p $TMP
