@@ -1,5 +1,3 @@
-builders:
-  - docker
 triggers:
   github_push: true  
   cron: "@daily"
