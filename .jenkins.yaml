@@ -1,0 +1,12 @@
+builders:
+  - multi-docker
+triggers:
+  github_push: true  
+  cron: "@daily"
+clean_workspace: true
+
+multi-docker:
+  default:
+    docker_name: docker-jenkins-job
+    docker_file: Dockerfile
+    
