@@ -7,6 +7,7 @@ clean_workspace: true
 
 multi-docker:
   default:
-    docker_name: docker-jenkins-job
+    name: docker-jenkins-job
+    docker_name: sunet/docker-jenkins-job
     docker_file: Dockerfile
     
