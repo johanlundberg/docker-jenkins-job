@@ -1,13 +1,12 @@
 builders:
-  - multi-docker
+  - docker
 triggers:
   github_push: true  
   cron: "@daily"
 clean_workspace: true
 
-multi-docker:
-  default:
-    name: docker-jenkins-job
-    docker_name: sunet/docker-jenkins-job
-    docker_file: Dockerfile
+extra_jobs:  
+  - name: docker-jenkins-java-job
+    docker_name: sunet/docker-jenkins-java-job
+    docker_file_dir: java
     
