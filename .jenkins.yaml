@@ -4,7 +4,7 @@ triggers:
 clean_workspace: true
 
 extra_jobs:  
-  - name: docker-jenkins-java-job
-    docker_name: sunet/docker-jenkins-java-job
-    docker_context_dir: java
+  - name: docker-jenkins-maven-job
+    docker_name: sunet/docker-jenkins-maven-job
+    docker_context_dir: maven
     
